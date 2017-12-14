@@ -1,26 +1,71 @@
 package automationAssignment;
 
-//package <set your test package>;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
 import com.experitest.client.*;
-import org.junit.*;
 
 public class BaseTest
 {
 	private String host = "localhost";
 	private int port = 8889;
-	private String projectBaseDirectory = "\\automationAssignment";
+	private String projectBaseDirectory = System.getProperty("user.dir") + "\\trainingAssignment";
 	protected Client client = null;
 
-	@Before
+	public void readCSV(ArrayList<String> usernames, ArrayList<String> passwords) throws IOException
+	{
+		String csvFilePath = System.getProperty("user.dir") + "/src/sources/csvfile.csv";
+		String line = "";
+		Scanner inputStream;
+
+		String csvSplitBy = ",";
+
+		try
+		{
+			inputStream = new Scanner(new File(csvFilePath));
+			inputStream.nextLine();
+
+			while (inputStream.hasNextLine())
+			{
+				line = inputStream.nextLine();
+
+				if (line.equals(""))
+				{
+					System.out.println("end of file");
+				} else
+				{
+					String[] credentials = line.split(csvSplitBy);
+					if (credentials[0].equals(""))
+						usernames.add(" ");
+					else
+						usernames.add(credentials[0]);
+
+					if (credentials[1].equals(""))
+						passwords.add(" ");
+					else
+						passwords.add(credentials[1]);
+				}
+			}
+		} catch (FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@BeforeMethod
 	public void setUp()
 	{
-		/*client = new Client(host, port, true);
+		System.out.println(projectBaseDirectory);
+		client = new Client(host, port, true);
 		client.setProjectBaseDirectory(projectBaseDirectory);
-		client.setReporter("xml", "reports", "Untitled");*/
-		System.out.println("test starting");
+		client.setReporter("xml", "reports", "Untitled");
 	}
 
-	
 	public void testAux()
 	{
 		String str0 = client.waitForDevice("@os='android'", 300000);
@@ -34,7 +79,7 @@ public class BaseTest
 		testAux();
 	}
 
-	@After
+	@AfterMethod
 	public void tearDown()
 	{
 		// Generates a report of the test case.
