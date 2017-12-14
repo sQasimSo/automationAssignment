@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><commands version="11.3">
+<command appiumName="" enable="true" name="WaitForDevice(Device, Timeout)">
+<parameters>
+<parameter appium="false" defaultValue="&quot;@os='android'&quot;" description="Search device query, for example: @os='android' and @version='4.4.2'" name="Device" pattern="(.+)" type="string"/>
+<parameter appium="false" defaultValue="300000" description="Timeout in milliseconds" name="Timeout" pattern="(\d+)" type="integer"/>
+</parameters>
+</command>
+<command appiumName="" enable="true" name="GetInstalledApplications()">
+<parameters/>
+</command>
+<command appiumName="InstallApp(path)" enable="true" name="Install(appPath,instrument,keepData)">
+<parameters>
+<parameter appium="true" defaultValue="cloud:com.experitest.ExperiBank/.LoginActivity" description="can be an APK/IPA etc. absolute path or an activity name from the application manager." name="Path" pattern="" type="install"/>
+<parameter appium="false" defaultValue="true" description="If set to TRUE will sign the application (if not already instrumented)" name="Instrument" pattern="" type="bool"/>
+<parameter appium="false" defaultValue="true" description="If set to TRUE will keep application data" name="Keep Data" pattern="" type="bool"/>
+</parameters>
+</command>
+<command appiumName="Launch(app)" enable="true" name="Launch(activity, instrument, stopIfRunning)">
+<parameters>
+<parameter appium="true" defaultValue="com.experitest.ExperiBank/.LoginActivity" description="The application main activity or URL" name="Activity/URL" pattern="(.+)" type="launch"/>
+<parameter appium="false" defaultValue="true" description="If set to true then will launch in instrument mode" name="Instrument" pattern="(true|false)" type="bool"/>
+<parameter appium="false" defaultValue="false" description="If set to true then will stop the running process before launching it" name="Stop If Running" pattern="(true|false)" type="bool"/>
+</parameters>
+</command>
+<command appiumName="FindElement and SendKeys(Element, Text)" enable="true" name="ElementSendText(Zone, Element, Index, Text)">
+<parameters>
+<parameter appium="false" defaultValue="default" description="Select Zone" name="Zone" pattern="" type="zone_no_ocr"/>
+<parameter appium="true" defaultValue="Username" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element index" name="Index" pattern="" type="integer"/>
+<parameter appium="true" defaultValue="company" description="Text to Send" name="Text" pattern="" type="string"/>
+</parameters>
+</command>
+<command appiumName="FindElement and SendKeys(Element, Text)" enable="true" name="ElementSendText(Zone, Element, Index, Text)">
+<parameters>
+<parameter appium="false" defaultValue="default" description="Select Zone" name="Zone" pattern="" type="zone_no_ocr"/>
+<parameter appium="true" defaultValue="Password" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element index" name="Index" pattern="" type="integer"/>
+<parameter appium="true" defaultValue="compan" description="Text to Send" name="Text" pattern="" type="string"/>
+</parameters>
+</command>
+<command appiumName="FindElement and Click(Element)" enable="true" name="Click(Zone, Element, Index, ClickCount)">
+<parameters>
+<parameter appium="false" defaultValue="NATIVE" description="Select Zone" name="Zone" pattern="" type="zone"/>
+<parameter appium="true" defaultValue="xpath=//*[@text='Login']" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element Order" name="Index" pattern="" type="integer"/>
+<parameter appium="false" defaultValue="1" description="Number of Clicks" name="Click Count" pattern="" type="integer"/>
+</parameters>
+</command>
+<command appiumName="" enable="true" name="IsElementFound(Zone, Element, Index)">
+<parameters>
+<parameter appium="false" defaultValue="NATIVE" description="Select Zone" name="Zone" pattern="" type="zone"/>
+<parameter appium="false" defaultValue="Close" description="Element to find" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element index" name="Index" pattern="" type="integer"/>
+</parameters>
+</command>
+<command appiumName="FindElement and Click(Element)" enable="true" name="Click(Zone, Element, Index, ClickCount)">
+<parameters>
+<parameter appium="false" defaultValue="default" description="Select Zone" name="Zone" pattern="" type="zone"/>
+<parameter appium="true" defaultValue="Close" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element Order" name="Index" pattern="" type="integer"/>
+<parameter appium="false" defaultValue="1" description="Number of Clicks" name="Click Count" pattern="" type="integer"/>
+</parameters>
+</command>
+<command appiumName="" enable="true" name="IsElementFound(Zone, Element, Index)">
+<parameters>
+<parameter appium="false" defaultValue="default" description="Select Zone" name="Zone" pattern="" type="zone"/>
+<parameter appium="false" defaultValue="Logout" description="Element to find" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element index" name="Index" pattern="" type="integer"/>
+</parameters>
+</command>
+</commands>

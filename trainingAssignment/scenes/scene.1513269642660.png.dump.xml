@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?><nodes ignored="true" web="false">
+<properties>
+<property type="onScreen" value="false"/>
+<property type="visible" value="false"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="1794" ignored="false" w="1080" web="false" x="0" y="0">
+<properties>
+<property type="class" value="com.android.internal.policy.DecorView"/>
+<property type="knownSuperClass" value="android.widget.FrameLayout"/>
+<property type="backColor" value="0x000000"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="0"/>
+<property type="width" value="1080"/>
+<property type="height" value="1794"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="1794" ignored="false" w="1080" web="false" x="0" y="0">
+<properties>
+<property type="class" value="android.widget.LinearLayout"/>
+<property type="knownSuperClass" value="android.widget.LinearLayout"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="0"/>
+<property type="width" value="1080"/>
+<property type="height" value="1794"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="0" ignored="false" w="0" web="false" x="0" y="0">
+<properties>
+<property type="id" value="action_mode_bar_stub"/>
+<property type="class" value="android.view.ViewStub"/>
+<property type="knownSuperClass" value="android.view.ViewStub"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="0"/>
+<property type="width" value="0"/>
+<property type="height" value="0"/>
+<property type="hidden" value="true"/>
+<property type="busy" value="true"/>
+<property type="onScreen" value="false"/>
+<property type="visible" value="false"/>
+<property type="top" value="false"/>
+</properties>
+<children/>
+</node>
+<node h="66" ignored="false" w="1080" web="false" x="0" y="63">
+<properties>
+<property type="class" value="android.widget.FrameLayout"/>
+<property type="knownSuperClass" value="android.widget.FrameLayout"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="63"/>
+<property type="width" value="1080"/>
+<property type="height" value="66"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="61" ignored="false" w="1058" web="false" x="11" y="64">
+<properties>
+<property type="id" value="title"/>
+<property type="text" value="Build Version : 1.0.1.365"/>
+<property type="class" value="android.widget.TextView"/>
+<property type="knownSuperClass" value="android.widget.TextView"/>
+<property type="textColor" value="0xFFFFFF"/>
+<property type="enabled" value="true"/>
+<property type="x" value="11"/>
+<property type="y" value="64"/>
+<property type="width" value="1058"/>
+<property type="height" value="61"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="true"/>
+</properties>
+<children/>
+</node>
+</children>
+</node>
+<node h="1665" ignored="false" w="1080" web="false" x="0" y="129">
+<properties>
+<property type="id" value="content"/>
+<property type="class" value="android.widget.FrameLayout"/>
+<property type="knownSuperClass" value="android.widget.FrameLayout"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="129"/>
+<property type="width" value="1080"/>
+<property type="height" value="1665"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="1665" ignored="false" w="1080" web="false" x="0" y="129">
+<properties>
+<property type="id" value="loginView"/>
+<property type="class" value="android.widget.LinearLayout"/>
+<property type="knownSuperClass" value="android.widget.LinearLayout"/>
+<property type="backColor" value="0xFFFFFF"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="129"/>
+<property type="width" value="1080"/>
+<property type="height" value="1665"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="1665" ignored="false" w="1080" web="false" x="0" y="129">
+<properties>
+<property type="id" value="scrollView1"/>
+<property type="class" value="android.widget.ScrollView"/>
+<property type="knownSuperClass" value="android.widget.ScrollView"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="129"/>
+<property type="width" value="1080"/>
+<property type="height" value="1665"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="829" ignored="false" w="1080" web="false" x="0" y="129">
+<properties>
+<property type="id" value="makePaymentView"/>
+<property type="class" value="android.widget.LinearLayout"/>
+<property type="knownSuperClass" value="android.widget.LinearLayout"/>
+<property type="backColor" value="0xFFFFFF"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="129"/>
+<property type="width" value="1080"/>
+<property type="height" value="829"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="224" ignored="false" w="728" web="false" x="176" y="155">
+<properties>
+<property type="class" value="android.widget.ImageView"/>
+<property type="knownSuperClass" value="android.widget.ImageView"/>
+<property type="enabled" value="true"/>
+<property type="x" value="176"/>
+<property type="y" value="155"/>
+<property type="width" value="728"/>
+<property type="height" value="224"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="true"/>
+</properties>
+<children/>
+</node>
+<node h="152" ignored="false" w="1080" web="false" x="0" y="379">
+<properties>
+<property type="class" value="android.widget.LinearLayout"/>
+<property type="knownSuperClass" value="android.widget.LinearLayout"/>
+<property type="backColor" value="0xFFFFFF"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="379"/>
+<property type="width" value="1080"/>
+<property type="height" value="152"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="126" ignored="false" w="1028" web="false" x="26" y="405">
+<properties>
+<property type="id" value="usernameTextField"/>
+<property type="text" value=""/>
+<property type="hint" value="Username"/>
+<property type="class" value="android.widget.EditText"/>
+<property type="knownSuperClass" value="android.widget.EditText"/>
+<property type="focused" value="true"/>
+<property type="textColor" value="0x000000"/>
+<property type="enabled" value="true"/>
+<property type="x" value="26"/>
+<property type="y" value="405"/>
+<property type="width" value="1028"/>
+<property type="height" value="126"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="true"/>
+</properties>
+<children/>
+</node>
+</children>
+</node>
+<node h="152" ignored="false" w="1080" web="false" x="0" y="531">
+<properties>
+<property type="class" value="android.widget.LinearLayout"/>
+<property type="knownSuperClass" value="android.widget.LinearLayout"/>
+<property type="backColor" value="0xFFFFFF"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="531"/>
+<property type="width" value="1080"/>
+<property type="height" value="152"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="false"/>
+</properties>
+<children>
+<node h="126" ignored="false" w="1028" web="false" x="26" y="557">
+<properties>
+<property type="id" value="passwordTextField"/>
+<property type="text" value=""/>
+<property type="hint" value="Password"/>
+<property type="class" value="android.widget.EditText"/>
+<property type="knownSuperClass" value="android.widget.EditText"/>
+<property type="textColor" value="0x000000"/>
+<property type="enabled" value="true"/>
+<property type="x" value="26"/>
+<property type="y" value="557"/>
+<property type="width" value="1028"/>
+<property type="height" value="126"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="true"/>
+</properties>
+<children/>
+</node>
+</children>
+</node>
+<node h="126" ignored="false" w="420" web="false" x="330" y="709">
+<properties>
+<property type="id" value="loginButton"/>
+<property type="text" value="Login"/>
+<property type="class" value="android.widget.Button"/>
+<property type="knownSuperClass" value="android.widget.Button"/>
+<property type="textColor" value="0x000000"/>
+<property type="enabled" value="true"/>
+<property type="x" value="330"/>
+<property type="y" value="709"/>
+<property type="width" value="420"/>
+<property type="height" value="126"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="true"/>
+</properties>
+<children/>
+</node>
+<node h="123" ignored="false" w="1080" web="false" x="0" y="835">
+<properties>
+<property type="text" value="Hint:company"/>
+<property type="class" value="android.widget.TextView"/>
+<property type="knownSuperClass" value="android.widget.TextView"/>
+<property type="textColor" value="0x000000"/>
+<property type="enabled" value="true"/>
+<property type="x" value="0"/>
+<property type="y" value="835"/>
+<property type="width" value="1080"/>
+<property type="height" value="123"/>
+<property type="hidden" value="false"/>
+<property type="busy" value="false"/>
+<property type="onScreen" value="true"/>
+<property type="visible" value="true"/>
+<property type="top" value="true"/>
+</properties>
+<children/>
+</node>
+</children>
+</node>
+</children>
+</node>
+</children>
+</node>
+</children>
+</node>
+</children>
+</node>
+</children>
+</node>
+</children>
+</nodes>

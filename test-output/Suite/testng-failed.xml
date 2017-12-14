@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test name="CSVloginIOS(failed)" parallel="tests">
+    <classes>
+      <class name="automationAssignment.CSVloginIOS">
+        <methods>
+          <include name="setUp"/>
+          <include name="test"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- automationAssignment.CSVloginIOS -->
+      <class name="automationAssignment.CSVloginAndroid">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- automationAssignment.CSVloginAndroid -->
+    </classes>
+  </test> <!-- CSVloginIOS(failed) -->
+</suite> <!-- Failed suite [Suite] -->

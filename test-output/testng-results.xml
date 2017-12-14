@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="165056" started-at="2017-12-14T19:33:53Z" finished-at="2017-12-14T19:36:38Z">
+    <groups>
+    </groups>
+    <test name="CSVloginAndroid" duration-ms="103673" started-at="2017-12-14T19:33:53Z" finished-at="2017-12-14T19:35:37Z">
+      <class name="automationAssignment.CSVloginAndroid">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:automationAssignment.CSVloginAndroid@6e6c3152]" name="setUp" is-config="true" duration-ms="363" started-at="2017-12-14T21:33:53Z" finished-at="2017-12-14T21:33:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test()[pri:0, instance:automationAssignment.CSVloginAndroid@6e6c3152]" name="test" duration-ms="99429" started-at="2017-12-14T21:33:53Z" finished-at="2017-12-14T21:35:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:automationAssignment.CSVloginAndroid@6e6c3152]" name="tearDown" is-config="true" duration-ms="3847" started-at="2017-12-14T21:35:33Z" finished-at="2017-12-14T21:35:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- automationAssignment.CSVloginAndroid -->
+    </test> <!-- CSVloginAndroid -->
+    <test name="CSVloginIOS" duration-ms="165051" started-at="2017-12-14T19:33:53Z" finished-at="2017-12-14T19:36:38Z">
+      <class name="automationAssignment.CSVloginIOS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:automationAssignment.CSVloginIOS@7d0587f1]" name="setUp" is-config="true" duration-ms="341" started-at="2017-12-14T21:33:53Z" finished-at="2017-12-14T21:33:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test()[pri:0, instance:automationAssignment.CSVloginIOS@7d0587f1]" name="test" duration-ms="162250" started-at="2017-12-14T21:33:53Z" finished-at="2017-12-14T21:36:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:automationAssignment.CSVloginIOS@7d0587f1]" name="tearDown" is-config="true" duration-ms="2433" started-at="2017-12-14T21:36:36Z" finished-at="2017-12-14T21:36:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- automationAssignment.CSVloginIOS -->
+    </test> <!-- CSVloginIOS -->
+  </suite> <!-- Suite -->
+</testng-results>

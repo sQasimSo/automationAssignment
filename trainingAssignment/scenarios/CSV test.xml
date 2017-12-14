@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><commands version="11.2">
+<command appiumName="SetDevice(Device)" enable="true" name="SetDevice(Device)">
+<parameters>
+<parameter appium="true" defaultValue="adb:LGE LG G5" description="Device name" name="Device" pattern="" type="application"/>
+</parameters>
+</command>
+<command appiumName="Launch(app)" enable="true" name="Launch(activity, instrument, stopIfRunning)">
+<parameters>
+<parameter appium="true" defaultValue="cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity" description="The application main activity or URL" name="Activity/URL" pattern="" type="launch"/>
+<parameter appium="false" defaultValue="true" description="If set to true then will launch in instrument mode" name="Instrument" pattern="" type="bool"/>
+<parameter appium="false" defaultValue="true" description="If set to true then will stop the running process before launching it" name="Stop If Running" pattern="" type="bool"/>
+</parameters>
+</command>
+<command appiumName="FindElement and SendKeys(Element, Text)" enable="true" name="ElementSendText(Zone, Element, Index, Text)">
+<parameters>
+<parameter appium="false" defaultValue="NATIVE" description="Select Zone" name="Zone" pattern="" type="zone_no_ocr"/>
+<parameter appium="true" defaultValue="UserName" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element index" name="Index" pattern="" type="integer"/>
+<parameter appium="true" defaultValue="" description="Text to Send" name="Text" pattern="" type="string"/>
+</parameters>
+</command>
+<command appiumName="FindElement and SendKeys(Element, Text)" enable="true" name="ElementSendText(Zone, Element, Index, Text)">
+<parameters>
+<parameter appium="false" defaultValue="NATIVE" description="Select Zone" name="Zone" pattern="" type="zone_no_ocr"/>
+<parameter appium="true" defaultValue="Password" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element index" name="Index" pattern="" type="integer"/>
+<parameter appium="true" defaultValue="" description="Text to Send" name="Text" pattern="" type="string"/>
+</parameters>
+</command>
+<command appiumName="FindElement and Click(Element)" enable="true" name="Click(Zone, Element, Index, ClickCount)">
+<parameters>
+<parameter appium="false" defaultValue="NATIVE" description="Select Zone" name="Zone" pattern="" type="zone"/>
+<parameter appium="true" defaultValue="Login" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element Order" name="Index" pattern="" type="integer"/>
+<parameter appium="false" defaultValue="1" description="Number of Clicks" name="Click Count" pattern="" type="integer"/>
+</parameters>
+</command>
+<command appiumName="FindElement(Element)" enable="true" name="VerifyElementFound(Zone, Element, Index)">
+<parameters>
+<parameter appium="false" defaultValue="NATIVE" description="Select Zone" name="Zone" pattern="" type="zone"/>
+<parameter appium="true" defaultValue="Make Payment" description="Select Element" name="Element" pattern="" type="element"/>
+<parameter appium="false" defaultValue="0" description="Element Order (=the number of times the element appears more and above the first time)" name="Index" pattern="" type="integer"/>
+</parameters>
+</command>
+</commands>

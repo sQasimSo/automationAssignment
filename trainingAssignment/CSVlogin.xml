@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><domain fixed="false" fullWindow="true" name="CSVlogin">
+<obj text="Logout" version="1">
+<images enable="true">
+<image file="default\Logout.PNG" jump="1" mainColor="-252526" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+<image file="CSVlogin\Logout.PNG" jump="1" mainColor="-110001" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Logout" class="android.widget.Button" classBB="" classIOS="//*[@text='Logout']" classWP="" contentDescription="" contentWP="" enable="true" enableBB="false" enableIOS="true" enableWP="false" hint="" id="logoutButton" method="xpath" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="Logout" textBB="" textIOS="Logout" textWP="" value="//*[@text='Logout']" xpath="//*[@text='Logout']" xpathIOS="" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Password" version="1">
+<images enable="true">
+<image file="default\Password.PNG" jump="1" mainColor="-272728" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+<image file="CSVlogin\Password.PNG" jump="1" mainColor="-10102" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Password" class="android.widget.EditText" classBB="" classIOS="//*[@accessibilityLabel='Password']" classWP="" contentDescription="" contentWP="" enable="true" enableBB="false" enableIOS="true" enableWP="false" hint="" id="passwordTextField" method="xpath" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="Password" textBB="" textIOS="Password" textWP="" value="//*[@id='passwordTextField']" xpath="//*[@id='passwordTextField']" xpathIOS="" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Username" version="1">
+<images enable="true">
+<image file="default\Username.PNG" jump="1" mainColor="-315f" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+<image file="CSVlogin\Username.PNG" jump="1" mainColor="-2f2f30" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="true" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Username" class="android.widget.EditText" classBB="" classIOS="//*[@accessibilityLabel='Username']" classWP="" contentDescription="" contentWP="" enable="true" enableBB="false" enableIOS="true" enableWP="false" hint="" id="usernameTextField" method="xpath" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="Username" textBB="" textIOS="Username" textWP="" value="//*[@id='usernameTextField']" xpath="//*[@id='usernameTextField']" xpathIOS="" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Close" version="1">
+<images enable="true">
+<image file="default\Close.PNG" jump="1" mainColor="-2f2f30" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+<image file="CSVlogin\Close.PNG" jump="1" mainColor="-90b01" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Dismiss" class="android.widget.Button" classBB="" classIOS="//*[@text='Dismiss']" classWP="" contentDescription="" contentWP="" enable="true" enableBB="false" enableIOS="true" enableWP="false" hint="" id="button3" method="xpath" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="Close" textBB="" textIOS="Dismiss" textWP="" value="//*[@text='Close']" xpath="//*[@text='Close']" xpathIOS="" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Login" version="1">
+<images enable="false">
+<image file="CSVlogin\Login.PNG" jump="1" mainColor="-d0001" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Login" class="" classBB="" classIOS="UIButtonLabel" classWP="" contentDescription="" contentWP="" enable="false" enableBB="false" enableIOS="true" enableWP="false" hint="" id="" method="class" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="" textBB="" textIOS="Login" textWP="" value="" xpath="" xpathIOS="//*[@text='Login']" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+</domain>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><domain fixed="false" fullWindow="true" name="CSVloginIOS">
+<obj text="Username" version="1">
+<images enable="true">
+<image file="CSVloginIOS\Username.PNG" jump="1" mainColor="-50506" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="usernameTextField" alIOS="usernameTextField" class="" classBB="" classIOS="UITextField" classWP="" contentDescription="" contentWP="" enable="false" enableBB="false" enableIOS="true" enableWP="false" hint="" id="" method="class" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="Username" scriptIOS="" text="" textBB="" textIOS="" textWP="" value="" xpath="" xpathIOS="//*[@placeholder='Username']" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Password" version="1">
+<images enable="true">
+<image file="CSVloginIOS\Password.PNG" jump="1" mainColor="-50506" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="passwordTextField" alIOS="passwordTextField" class="" classBB="" classIOS="UITextField" classWP="" contentDescription="" contentWP="" enable="false" enableBB="false" enableIOS="true" enableWP="false" hint="" id="" method="class" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="Password" scriptIOS="" text="" textBB="" textIOS="" textWP="" value="" xpath="" xpathIOS="//*[@placeholder='Password']" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Login" version="1">
+<images enable="true">
+<image file="CSVloginIOS\Login.PNG" jump="1" mainColor="-30001" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="loginButton" class="" classBB="" classIOS="UIButton" classWP="" contentDescription="" contentWP="" enable="false" enableBB="false" enableIOS="true" enableWP="false" hint="" id="" method="class" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="" textBB="" textIOS="" textWP="" value="" xpath="" xpathIOS="//*[@accessibilityLabel='loginButton']" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Dismiss" version="1">
+<images enable="true">
+<image file="CSVloginIOS\Dismiss.PNG" jump="1" mainColor="-b0001" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Dismiss" class="" classBB="" classIOS="UILabel" classWP="" contentDescription="" contentWP="" enable="false" enableBB="false" enableIOS="true" enableWP="false" hint="" id="" method="class" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="" textBB="" textIOS="Dismiss" textWP="" value="" xpath="" xpathIOS="//*[@text='Dismiss']" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+<obj text="Logout" version="1">
+<images enable="true">
+<image file="CSVloginIOS\Logout.PNG" jump="1" mainColor="-a89260" max="0" min="0" scanner="Advance Similarity" similarity="97"/>
+</images>
+<text color="2147483647" enable="false" filter="false" ignoreCase="false" regexp="false" sensitivity="10" text=""/>
+<native aiIOS="" alIOS="Logout" class="" classBB="" classIOS="UIButtonLabel" classWP="" contentDescription="" contentWP="" enable="false" enableBB="false" enableIOS="true" enableWP="false" hint="" id="" method="class" methodBB="class" methodIOS="xpath" methodWP="class" nameWP="" placeholderIOS="" scriptIOS="" text="" textBB="" textIOS="Logout" textWP="" value="" xpath="" xpathIOS="//*[@text='Logout']" xpathWP=""/>
+<web enable="false" method="" value=""/>
+</obj>
+</domain>
