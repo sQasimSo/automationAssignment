@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.CSVloginAndroid" hash-for-method="test">test</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.CSVloginIOS" hash-for-method="test">test</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.timerTEst" hash-for-method="test(60000)">test(60000)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,29 +120,15 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">automationAssignment.CSVloginIOS</span>
+              <span class="class-name">automationAssignment.timerTEst</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test">
-                  </a> <!-- test -->
+                  <a name="test(60000)">
+                  </a> <!-- test(60000) -->
                   <span class="method-name">test</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">automationAssignment.CSVloginAndroid</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="test">
-                  </a> <!-- test -->
-                  <span class="method-name">test</span>
+                  <span class="parameters">(60000)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -162,16 +143,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;CSVloginAndroid&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;timerTEst&quot;&gt;
+    &lt;parameter name=&quot;timeInMillis&quot; value=&quot;60000&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;automationAssignment.CSVloginAndroid&quot;/&gt;
+      &lt;class name=&quot;automationAssignment.timerTEst&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- CSVloginAndroid --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;CSVloginIOS&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;automationAssignment.CSVloginIOS&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- CSVloginIOS --&gt;
+  &lt;/test&gt; &lt;!-- timerTEst --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -183,10 +160,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">CSVloginAndroid (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">CSVloginIOS (1 class)</span>
+                <span class="test-name">timerTEst (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -212,20 +186,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test')
-data.setCell(0, 2, 'automationAssignment.CSVloginIOS')
-data.setCell(0, 3, 162250);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test')
-data.setCell(1, 2, 'automationAssignment.CSVloginAndroid')
-data.setCell(1, 3, 99429);
+data.setCell(0, 2, 'automationAssignment.timerTEst')
+data.setCell(0, 3, 60042);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -251,42 +221,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">automationAssignment.CSVloginIOS</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">automationAssignment.timerTEst</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">automationAssignment.CSVloginAndroid</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">automationAssignment.CSVloginIOS</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">test</span>
-                <span class="method-start">341 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">automationAssignment.CSVloginAndroid</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">test</span>
-                <span class="method-start">363 ms</span>
+                <span class="method-name">test(60000)</span>
+                <span class="method-start">343 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">99793 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">automationAssignment.CSVloginIOS</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">162592 ms</span>
+                <span class="method-start">60386 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

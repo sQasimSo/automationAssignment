@@ -56,7 +56,7 @@ public class BaseTest
 			e.printStackTrace();
 		}
 	}
-	
+
 	@BeforeMethod
 	public void setUp()
 	{
@@ -68,15 +68,26 @@ public class BaseTest
 
 	public void testAux()
 	{
-		String str0 = client.waitForDevice("@os='android'", 300000);
-		client.launch("http://www.cnn.com", true, false);
-		client.deviceAction("Back");	
+		System.out.println("testAux was not overriden correctly!");
 	}
-	
+
 	@Test
-	public void test()
+	@Parameters(
+	{ "timeInMillis", "timerON" })
+	public void test(long timeInMillis, String timerON)
 	{
-		testAux();
+		long startTime = System.currentTimeMillis();
+		long endTime = startTime + timeInMillis;
+
+		if (timerON.equals("true"))
+		{
+			while (System.currentTimeMillis() < endTime)
+				testAux();
+		}
+		else
+		{
+			testAux();
+		}
 	}
 
 	@AfterMethod
