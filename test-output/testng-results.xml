@@ -2,27 +2,32 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="62293" started-at="2017-12-14T21:14:47Z" finished-at="2017-12-14T21:15:49Z">
+  <suite name="Suite" duration-ms="62292" started-at="2017-12-15T14:21:33Z" finished-at="2017-12-15T14:22:35Z">
     <groups>
     </groups>
-    <test name="timerTEst" duration-ms="62293" started-at="2017-12-14T21:14:47Z" finished-at="2017-12-14T21:15:49Z">
+    <test name="timerTEst" duration-ms="62292" started-at="2017-12-15T14:21:33Z" finished-at="2017-12-15T14:22:35Z">
       <class name="automationAssignment.timerTEst">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="setUp" is-config="true" duration-ms="343" started-at="2017-12-14T23:14:47Z" finished-at="2017-12-14T23:14:47Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="setUp" is-config="true" duration-ms="373" started-at="2017-12-15T16:21:33Z" finished-at="2017-12-15T16:21:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test(long)[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="test" duration-ms="60042" started-at="2017-12-14T23:14:47Z" finished-at="2017-12-14T23:15:47Z">
+        <test-method status="PASS" signature="test(long, java.lang.String)[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="test" duration-ms="60025" started-at="2017-12-15T16:21:33Z" finished-at="2017-12-15T16:22:33Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[60000]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="tearDown" is-config="true" duration-ms="1878" started-at="2017-12-14T23:15:47Z" finished-at="2017-12-14T23:15:49Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="tearDown" is-config="true" duration-ms="1836" started-at="2017-12-15T16:22:33Z" finished-at="2017-12-15T16:22:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <test name="CSVloginIOS(failed)" parallel="tests">
+  <parameter name="timeInMillis" value="60000"/>
+  <parameter name="timerON" value="true"/>
+  <test name="timerTEst(failed)" parallel="tests">
+    <parameter name="timeInMillis" value="60000"/>
+    <parameter name="timerON" value="true"/>
     <classes>
-      <class name="automationAssignment.CSVloginIOS">
+      <class name="automationAssignment.timerTEst">
         <methods>
           <include name="setUp"/>
           <include name="test"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- automationAssignment.CSVloginIOS -->
-      <class name="automationAssignment.CSVloginAndroid">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- automationAssignment.CSVloginAndroid -->
+      </class> <!-- automationAssignment.timerTEst -->
     </classes>
-  </test> <!-- CSVloginIOS(failed) -->
+  </test> <!-- timerTEst(failed) -->
 </suite> <!-- Failed suite [Suite] -->

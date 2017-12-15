@@ -16,6 +16,7 @@
 	
 	<test thread-count="5" name="timerTEst" >	
 		<parameter name="timeInMillis" value="60000"/>
+		<parameter name="timerON" value="true"/>
 		<classes>
 			<class name="automationAssignment.timerTEst"/>
 		</classes>

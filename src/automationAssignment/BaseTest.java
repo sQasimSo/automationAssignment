@@ -72,8 +72,7 @@ public class BaseTest
 	}
 
 	@Test
-	@Parameters(
-	{ "timeInMillis", "timerON" })
+	@Parameters({ "timeInMillis", "timerON" })
 	public void test(long timeInMillis, String timerON)
 	{
 		long startTime = System.currentTimeMillis();

@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.timerTEst" hash-for-method="test(60000)">test(60000)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.timerTEst" hash-for-method="test(60000, true)">test(60000, true)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,10 +125,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test(60000)">
-                  </a> <!-- test(60000) -->
+                  <a name="test(60000, true)">
+                  </a> <!-- test(60000, true) -->
                   <span class="method-name">test</span>
-                  <span class="parameters">(60000)</span>
+                  <span class="parameters">(60000, true)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -145,6 +145,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot; parallel=&quot;tests&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;timerTEst&quot;&gt;
     &lt;parameter name=&quot;timeInMillis&quot; value=&quot;60000&quot;/&gt;
+    &lt;parameter name=&quot;timerON&quot; value=&quot;true&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;automationAssignment.timerTEst&quot;/&gt;
     &lt;/classes&gt;
@@ -190,7 +191,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test')
 data.setCell(0, 2, 'automationAssignment.timerTEst')
-data.setCell(0, 3, 60042);
+data.setCell(0, 3, 60025);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -227,12 +228,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test(60000)</span>
-                <span class="method-start">343 ms</span>
+                <span class="method-name">test(60000, true)</span>
+                <span class="method-start">373 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">60386 ms</span>
+                <span class="method-start">60399 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
