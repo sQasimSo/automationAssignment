@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.timerTEst" hash-for-method="test(60000, true)">test(60000, true)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="automationAssignment.TestingClass" hash-for-method="test(60000, false, 3)">test(60000, false, 3)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -120,15 +120,15 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">automationAssignment.timerTEst</span>
+              <span class="class-name">automationAssignment.TestingClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test(60000, true)">
-                  </a> <!-- test(60000, true) -->
+                  <a name="test(60000, false, 3)">
+                  </a> <!-- test(60000, false, 3) -->
                   <span class="method-name">test</span>
-                  <span class="parameters">(60000, true)</span>
+                  <span class="parameters">(60000, false, 3)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -142,14 +142,15 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;timerTEst&quot;&gt;
+&lt;suite thread-count=&quot;10&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot; parallel=&quot;tests&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;TestingClass&quot;&gt;
+    &lt;parameter name=&quot;threadsCount&quot; value=&quot;3&quot;/&gt;
     &lt;parameter name=&quot;timeInMillis&quot; value=&quot;60000&quot;/&gt;
-    &lt;parameter name=&quot;timerON&quot; value=&quot;true&quot;/&gt;
+    &lt;parameter name=&quot;timerON&quot; value=&quot;false&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;automationAssignment.timerTEst&quot;/&gt;
+      &lt;class name=&quot;automationAssignment.TestingClass&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- timerTEst --&gt;
+  &lt;/test&gt; &lt;!-- TestingClass --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,7 +162,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">timerTEst (1 class)</span>
+                <span class="test-name">TestingClass (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -190,8 +191,8 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test')
-data.setCell(0, 2, 'automationAssignment.timerTEst')
-data.setCell(0, 3, 60025);
+data.setCell(0, 2, 'automationAssignment.TestingClass')
+data.setCell(0, 3, 79534);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -222,18 +223,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">automationAssignment.timerTEst</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">automationAssignment.TestingClass</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test(60000, true)</span>
-                <span class="method-start">373 ms</span>
+                <span class="method-name">test(60000, false, 3)</span>
+                <span class="method-start">351 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">60399 ms</span>
+                <span class="method-start">79887 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

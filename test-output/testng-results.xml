@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="62292" started-at="2017-12-15T14:21:33Z" finished-at="2017-12-15T14:22:35Z">
+  <suite name="Suite" duration-ms="83015" started-at="2017-12-15T20:55:04Z" finished-at="2017-12-15T20:56:27Z">
     <groups>
     </groups>
-    <test name="timerTEst" duration-ms="62292" started-at="2017-12-15T14:21:33Z" finished-at="2017-12-15T14:22:35Z">
-      <class name="automationAssignment.timerTEst">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="setUp" is-config="true" duration-ms="373" started-at="2017-12-15T16:21:33Z" finished-at="2017-12-15T16:21:33Z">
+    <test name="TestingClass" duration-ms="83015" started-at="2017-12-15T20:55:04Z" finished-at="2017-12-15T20:56:27Z">
+      <class name="automationAssignment.TestingClass">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:automationAssignment.TestingClass@3d99d22e]" name="setUp" is-config="true" duration-ms="351" started-at="2017-12-15T22:55:04Z" finished-at="2017-12-15T22:55:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test(long, java.lang.String)[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="test" duration-ms="60025" started-at="2017-12-15T16:21:33Z" finished-at="2017-12-15T16:22:33Z">
+        <test-method status="PASS" signature="test(long, java.lang.String, int)[pri:0, instance:automationAssignment.TestingClass@3d99d22e]" name="test" duration-ms="79534" started-at="2017-12-15T22:55:04Z" finished-at="2017-12-15T22:56:23Z">
           <params>
             <param index="0">
               <value>
@@ -20,18 +20,23 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[true]]>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:automationAssignment.timerTEst@3d99d22e]" name="tearDown" is-config="true" duration-ms="1836" started-at="2017-12-15T16:22:33Z" finished-at="2017-12-15T16:22:35Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:automationAssignment.TestingClass@3d99d22e]" name="tearDown" is-config="true" duration-ms="3097" started-at="2017-12-15T22:56:23Z" finished-at="2017-12-15T22:56:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- automationAssignment.timerTEst -->
-    </test> <!-- timerTEst -->
+      </class> <!-- automationAssignment.TestingClass -->
+    </test> <!-- TestingClass -->
   </suite> <!-- Suite -->
 </testng-results>

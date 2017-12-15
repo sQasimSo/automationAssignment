@@ -1,16 +1,17 @@
 package automationAssignment;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class CSVloginIOS extends BaseTest
-{
+{	
 	public void readCSV(ArrayList<String> usernames, ArrayList<String> passwords) throws IOException
 	{
 		super.readCSV(usernames, passwords);
 	}
 
-	public void testAux()
+	public String testAux()
 	{
 		ArrayList<String> usernames = new ArrayList<String>();
 		ArrayList<String> passwords = new ArrayList<String>();
@@ -23,11 +24,31 @@ public class CSVloginIOS extends BaseTest
 		}
 
 		loginTestIOS(usernames, passwords);
+		
+		this.status = "succeeded";
+		
+		return status;
 	}
 
 	private void loginTestIOS(ArrayList<String> usernames, ArrayList<String> passwords)
 	{
+		
 		String str0 = client.waitForDevice("@os='ios'", 300000);
+		reportsPath = System.getProperty("user.dir") + "\\testReports\\RUN_" +System.currentTimeMillis() + "\\" + str0.split(":")[1];
+		System.out.println(reportsPath);
+		
+		try
+		{
+			new File(reportsPath).mkdir();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		client.setReporter("xml", reportsPath, getTestName());
+		
+		
 		if (client.install("cloud:com.experitest.ExperiBank", true, true))
 		{
 			// If statement

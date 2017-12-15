@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
+<suite name="Suite" parallel="tests" thread-count="10">
 
-<!-- 	<test thread-count="5" name="CSVloginAndroid" >	 -->
+<!-- 	<test thread-count="5" name="CSVloginAndroid"> -->
+<!-- 		<parameter name="timeInMillis" value="60000" /> -->
+<!-- 		<parameter name="timerON" value="false" /> -->
+<!-- 		<parameter name="threadsCount" value="2" /> -->
 <!-- 		<classes> -->
-<!-- 			<class name="automationAssignment.CSVloginAndroid"/> -->
+<!-- 			<class name="automationAssignment.CSVloginAndroid" /> -->
 <!-- 		</classes> -->
-<!-- 	</test> Test -->
-	
-<!-- 	<test thread-count="5" name="CSVloginIOS" >	 -->
+<!-- 	</test> -->
+
+<!-- 	<test thread-count="5" name="CSVloginIOS"> -->
+<!-- 		<parameter name="timeInMillis" value="60000" /> -->
+<!-- 		<parameter name="timerON" value="false" /> -->
+<!-- 		<parameter name="threadsCount" value="5" /> -->
 <!-- 		<classes> -->
-<!-- 			<class name="automationAssignment.CSVloginIOS"/> -->
+<!-- 			<class name="automationAssignment.CSVloginIOS" /> -->
 <!-- 		</classes> -->
-<!-- 	</test> Test -->
-	
-	<test thread-count="5" name="timerTEst" >	
-		<parameter name="timeInMillis" value="60000"/>
-		<parameter name="timerON" value="true"/>
+<!-- 	</test> -->
+
+	<test thread-count="5" name="TestingClass">
+		<parameter name="timeInMillis" value="60000" />
+		<parameter name="timerON" value="false" />
+		<parameter name="threadsCount" value="3" />
 		<classes>
-			<class name="automationAssignment.timerTEst"/>
+			<class name="automationAssignment.TestingClass" />
 		</classes>
-	</test> <!-- Test -->
-	
-</suite> <!-- Suite -->
+	</test>
+
+<!-- 	<test thread-count="5" name="CNN_a"> -->
+<!-- 		<parameter name="timeInMillis" value="60000" /> -->
+<!-- 		<parameter name="timerON" value="false" /> -->
+<!-- 		<parameter name="threadsCount" value="5" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="automationAssignment.CNNa" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 	<test thread-count="5" name="CNN_a1"> -->
+<!-- 		<parameter name="timeInMillis" value="60000" /> -->
+<!-- 		<parameter name="timerON" value="false" /> -->
+<!-- 		<parameter name="threadsCount" value="5" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="automationAssignment.CNNa" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 	<test thread-count="5" name="CNN_a_IOS"> -->
+<!-- 		<parameter name="timeInMillis" value="60000" /> -->
+<!-- 		<parameter name="timerON" value="false" /> -->
+<!-- 		<parameter name="threadsCount" value="5" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="automationAssignment.CNNaIOS" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+</suite>

@@ -5,13 +5,13 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class CSVloginAndroid extends BaseTest
-{
+{	
 	public void readCSV(ArrayList<String> usernames, ArrayList<String> passwords) throws IOException
 	{
 		super.readCSV(usernames, passwords);
 	}
 	
-	public void testAux()
+	public String testAux()
 	{
 		ArrayList<String> usernames = new ArrayList<String>();
 		ArrayList<String> passwords = new ArrayList<String>();
@@ -24,12 +24,30 @@ public class CSVloginAndroid extends BaseTest
 		}
 		
 		loginTestAndroid(usernames, passwords);
+		
+		this.status = "succeeded";
+		
+		return status;
 	}
 
 	
 	private void loginTestAndroid(ArrayList<String> usernames, ArrayList<String> passwords)
 	{
 		String str0 = client.waitForDevice("@os='android'", 300000);
+		reportsPath = System.getProperty("user.dir") + "\\testReports\\RUN_" +System.currentTimeMillis() + "\\" + str0.split(":")[1];
+		System.out.println(reportsPath);
+		
+		try
+		{
+			new File(reportsPath).mkdir();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		client.setReporter("xml", reportsPath, getTestName());
+		
 		if (client.install("cloud:com.experitest.ExperiBank/.LoginActivity", true, true))
 		{
 			// If statement

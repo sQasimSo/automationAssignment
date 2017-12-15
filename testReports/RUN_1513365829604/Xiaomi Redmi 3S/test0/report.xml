@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><test_report>
+<info>
+<test_info>
+<test_status>OK</test_status>
+<time_zone>Israel Standard Time</time_zone>
+<run_started>Fri, 15 Dec 2017 21:23:53</run_started>
+<total_time>93.0</total_time>
+<project>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\trainingAssignment</project>
+<user>karou</user>
+<machine_name>DESKTOP-R975OVJ</machine_name>
+</test_info>
+<device_info>
+<device_name>Xiaomi Redmi 3S</device_name>
+<manufacture>Xiaomi</manufacture>
+<model>Redmi 3S</model>
+<os>Android</os>
+<serial_number>f229f2207d53</serial_number>
+<version>6.0.1</version>
+<versionMajor>6.x</versionMajor>
+<screen_size>720x1280</screen_size>
+</device_info>
+</info>
+<reports>
+<report>
+<text>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513365829604\Xiaomi Redmi 3S\test0</text>
+<line>Start test automationAssignment.TestingClass</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>2.PNG</imageFile>
+<line>Launch native activity / URL http://www.cnn.com</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>3.PNG</imageFile>
+<text>Found: true</text>
+<line>Wait for 'xpath=//*[@id='menu']' in zone web, timeout: 1200000</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>4.PNG</imageFile>
+<secondImageFile>5.PNG</secondImageFile>
+<line>Click 'xpath=//*[@id='menu']' in zone web, index: 0, click count: 1</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>6.PNG</imageFile>
+<text>Found: true</text>
+<line>Check if 'xpath=//*[@text='I agree' and @nodeName='DIV']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>7.PNG</imageFile>
+<secondImageFile>8.PNG</secondImageFile>
+<line>Click 'xpath=//*[@text='I agree' and @nodeName='DIV']' in zone web, index: 0, click count: 1</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>9.PNG</imageFile>
+<text/>
+<line>Run javascript on WebView</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>10.PNG</imageFile>
+<line>Hybrid Clear Cache</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>11.PNG</imageFile>
+<line>End Test</line>
+<status>true</status>
+</report>
+</reports>
+</test_report>

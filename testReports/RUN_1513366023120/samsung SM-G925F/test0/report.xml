@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><test_report>
+<info>
+<test_info>
+<test_status>Failed</test_status>
+<time_zone>Israel Standard Time</time_zone>
+<run_started>Fri, 15 Dec 2017 21:27:05</run_started>
+<total_time>248.0</total_time>
+<project>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\trainingAssignment</project>
+<user>karou</user>
+<machine_name>DESKTOP-R975OVJ</machine_name>
+</test_info>
+<device_info>
+<device_name>samsung SM-G925F</device_name>
+<manufacture>samsung</manufacture>
+<model>SM-G925F</model>
+<os>Android</os>
+<serial_number>04157df474344822</serial_number>
+<version>6.0.1</version>
+<versionMajor>6.x</versionMajor>
+<screen_size>1440x2560</screen_size>
+</device_info>
+</info>
+<reports>
+<report>
+<text>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513366023120\samsung SM-G925F\test0</text>
+<line>Start test automationAssignment.CNNa</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>2.PNG</imageFile>
+<line>Launch native activity / URL http://www.cnn.com</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>3.PNG</imageFile>
+<text>Found: true</text>
+<line>Wait for 'xpath=//*[@id='menu']' in zone web, timeout: 1200000</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>4.PNG</imageFile>
+<secondImageFile>5.PNG</secondImageFile>
+<line>Click 'xpath=//*[@id='menu']' in zone web, index: 0, click count: 1</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>6.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='I agree' and @nodeName='DIV']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>7.PNG</imageFile>
+<text>Found: true</text>
+<line>Check if 'xpath=//*[@text='U.S.']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>8.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='World']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>9.PNG</imageFile>
+<secondImageFile>10.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@text='World']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>11.PNG</imageFile>
+<text>Found: true</text>
+<line>Check if 'xpath=//*[@href='/politics']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>12.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@href='//money.cnn.com']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>13.PNG</imageFile>
+<secondImageFile>14.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@href='//money.cnn.com']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>15.PNG</imageFile>
+<text>Found: true</text>
+<line>Check if 'xpath=//*[@text='Opinion']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>16.PNG</imageFile>
+<text>Found: true</text>
+<line>Check if 'xpath=//*[@text='Health']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>17.PNG</imageFile>
+<text>Found: true</text>
+<line>Check if 'xpath=//*[@href='/entertainment']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>18.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='Tech']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>19.PNG</imageFile>
+<secondImageFile>20.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@text='Tech']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>21.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@href='/style']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>22.PNG</imageFile>
+<secondImageFile>23.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@href='/style']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>24.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='Travel']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>25.PNG</imageFile>
+<secondImageFile>26.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@text='Travel']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>27.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@href='//bleacherreport.com']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>28.PNG</imageFile>
+<secondImageFile>29.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@href='//bleacherreport.com']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>30.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='Living']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>31.PNG</imageFile>
+<secondImageFile>32.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@text='Living']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>33.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='Video']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>34.PNG</imageFile>
+<secondImageFile>35.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@text='Video']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>36.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@href='/vr']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>37.PNG</imageFile>
+<secondImageFile>38.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@href='/vr']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>39.PNG</imageFile>
+<text>Found: false</text>
+<line>Check if 'xpath=//*[@text='More&amp;hellip;']' is found in zone 'web' index 0</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>40.PNG</imageFile>
+<secondImageFile>41.PNG</secondImageFile>
+<text>Found: false</text>
+<line>Swipe to find xpath=//*[@text='More&amp;hellip;']</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>42.PNG</imageFile>
+<line>Run javascript on WebView</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>43.PNG</imageFile>
+<line>End Test</line>
+<status>true</status>
+</report>
+</reports>
+</test_report>

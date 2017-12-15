@@ -1,0 +1,2660 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<title>automationAssignment.TestingClass</title>
+
+		<link rel="shortcut icon" href="resources/images/favicon_auto.ico">
+
+		<script type="text/javascript" src='resources/jquery-2.1.0.min.js'></script>
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src='resources/jquery-1.11.1.min.js'></script>
+		<![endif]-->
+		<script type='text/javascript' src='resources/reports.js'></script>
+		<script type="text/javascript" src='resources/js/moment.min.js'></script>
+		<script type="text/javascript" src='resources/js/chart_v2.min.js'></script>
+		<script type="text/javascript" src="resources/js/bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+
+		<style type="text/css">
+
+		* {
+			font-family: 'Segoe UI',Tahoma,Helvetica,Sans-Serif;
+		}
+
+		a,
+		a:focus,
+		a:active,
+		a:hover{
+			color: black;
+			text-decoration: none;
+		}
+
+		.navbar{
+			position: fixed;
+			margin-bottom: 0;
+			line-height: 60px;
+			height: 59px;
+			width: 100%;
+			border-radius: 0;
+		}
+
+		.navbar h3{
+			float: left;
+			line-height: 16px;
+			font-size: 22px;
+		}
+
+		.navbar .logo{
+			float: right;
+			background-image: url(resources/images/logo.png);
+			width: 100px;
+			height: 30px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin: 15px auto;
+		}
+
+		.navbar .logomf{
+			float: right;
+			background-image: url(resources/images/mf_logo.jpg);
+			width: 100px;
+			height: 30px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin: 15px auto;
+		}
+
+		.nav-tabs {
+			border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+		}
+
+		.body-content{
+			position: fixed;
+			width: 100%;
+			height: calc(100% - 60px);
+			top: 60px;
+		}
+
+		.left-panel{
+			overflow-y: auto;
+			width: 20%;
+			padding: 0;
+			margin: 0;
+			height: 100%;
+		}
+
+		.left-panel .list-group-item.selected{
+			background-color: rgba(100,100,100,0.1);
+		}
+
+		.left-panel .list-group-item:hover {
+			background-color: rgba(100,100,100,0.1);
+		}
+
+		.left-panel .badge{
+			font-size: 10px;
+			float: right;
+		}
+
+		.left-panel .glyphicon-folder:before {
+  			content: "\e118";
+		}
+
+		.left-panel .collapsed .glyphicon-folder:before {
+  			content: "\e117" !important;
+		}
+
+		.left-panel .badge.success{
+			background-color: rgba(20, 160, 20, 0.8);
+		}
+
+		.left-panel .badge.failed{
+			background-color: rgba(200, 10, 10, 0.8);
+		}
+
+		.list-group-item{
+			border: none;
+			font-size: 14px;
+			display: list-item;
+			cursor: pointer;
+			border-radius: 0px !important;
+			margin-bottom: 0px;
+			padding: 14px 15px !important;
+			border-bottom: 1px solid #eee;
+		}
+
+		.list-group-item.collapse:not(.in){
+			display: none;
+		}
+
+		.left-panel ul > li:nth-child(1) .txt{
+  			font-weight: 600;
+		}
+
+		.list-group-item div:not(.glyphicon) {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.list-group-item > span {
+			float: left;
+		}
+
+		.list-group-item .txt{
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			max-width: calc(100% - 30px);
+		}
+
+		#vertical-divider{
+			position: fixed;
+			border-right: 1px solid rgba(100,100,100,0.2);
+			width: 1px;
+			height: calc(100% - 60px);
+			left: 20%;
+			top: 60px;
+			z-index: 10;
+			cursor: col-resize;
+			cursor: -webkit-grab;
+		}
+
+		#vertical-divider:hover {
+			border: 1px dashed rgba(100,100,100,0.5);
+		}
+
+		#vertical-divider:active {
+  			cursor: -webkit-grabbing;
+		}
+
+		.right-panel{
+			position: fixed;
+			width: 80%;
+			left: 20%;
+			height: calc(100% - 60px);
+			top: 60px;
+		}
+
+		.right-panel .results{
+			position: fixed;
+			height: calc(100% - 60px);
+			top: 60px;
+			width: 80%;
+			overflow-y: auto;
+			padding: 0 20px;
+			margin: 0;
+			display: none;
+		}
+
+		.right-panel .nav li {
+			font-size: 15px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.right-panel .nav li.selected {
+			background: rgba(100,100,100,0.1);
+		}
+
+		.right-panel .results.selected{
+			display: block;
+		}
+
+		.right-panel .nav-tabs{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.right-panel .alert .glyphicon,
+		.right-panel .panel .glyphicon{
+			margin-right: 10px;
+		}
+
+		.right-panel .two-screenshots .panel {
+			width: 49%;
+			float: left;
+		}
+
+		.right-panel .two-screenshots .panel:first-child{
+			margin-right: 2%;
+		}
+
+		.right-panel .panel .table{
+			margin: 0;
+		}
+
+		.right-panel .panel .table td{
+			border: none;
+			width: 50%;
+		}
+		
+		.table.t  td{
+			width:33% !important;
+		}
+		
+		.right-panel .panel .table tr:not(:first-child){
+			border-top: 1px solid #ddd;
+		}
+
+		.right-panel .results:not(:first-child) .page-header{
+			margin: 20px 0;
+		}
+
+		.right-panel .screenshot img{
+			max-width: 100%;
+			display: block;
+  			margin-right: auto;
+  			margin-left: auto;
+		}
+
+		.right-panel .video-wrap{
+			background-color: black;
+		}
+
+		.right-panel .video-wrap video{
+			height:600px;
+
+		}
+
+		.popover-title {
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		video:-webkit-full-screen	{ width: 100% ; height: 100% ; max-height: none;}
+		video:-moz-full-screen		{ width: 100% ; height: 100% ; max-height: none;}
+		video:-ms-full-screen		{ width: 100% ; height: 100% ; max-height: none;}
+		video:-o-full-screen		{ width: 100% ; height: 100% ; max-height: none;}
+		video:full-screen			{ width: 100% ; height: 100% ; max-height: none;}
+
+		#noscript{
+			position: fixed;
+			z-index: 10;
+			bottom: 10px;
+			right: 30px;
+		}
+
+		#monitoring-graph-cpu-container{
+            width: 48%;
+            float: left;
+        }
+
+        #monitoring-graph-memory-container{
+            width: 48%;
+            float: right;
+        }
+
+		</style>
+
+	</head>
+	<body>
+		<noscript>
+			<div id='noscript' class='alert alert-danger'>
+				Javascript was not detected. Please enable Javascript in this page to access the data in this report.
+			</div>
+		</noscript>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<h3>automationAssignment.TestingClass</h3>
+							<a href='http://www.experitest.com' class='logo' target='_BLANK'></a>
+						</div>
+		</nav>
+
+		<div class='body-content'>
+
+			<div class='left-panel'>
+				<ul id='report-bar-ul' class='list-group'>
+
+					<li class='list-group-item selected' title="Test Execution Summary" data-step-counter="0">
+						<span class='txt'>Test Execution Summary</span>
+						<div class='badge'>
+							<span class='glyphicon glyphicon-th-list'></span>
+						</div>
+					</li>
+
+										
+													<li class='list-group-item' title="Start test automationAssignment.TestingClass" data-step-counter="1"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>1</span>
+									<span> Start test automationAssignment.TestingClass</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Launch native activity / URL http://www.cnn.com" data-step-counter="2"
+																data-content="<img src='images/2.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>2</span>
+									<span> Launch native activity / URL http://www.cnn.com</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Wait for 'xpath=//*[@id='menu']' in zone web, timeout: 1200000" data-step-counter="3"
+																data-content="<img src='images/3.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>3</span>
+									<span> Wait for 'xpath=//*[@id='menu']' in zone web, timeout: 1200000</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Click 'xpath=//*[@id='menu']' in zone web, index: 0, click count: 1" data-step-counter="4"
+																data-content="<img src='images/4.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>4</span>
+									<span> Click 'xpath=//*[@id='menu']' in zone web, index: 0, click count: 1</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Check if 'xpath=//*[@text='I agree' and @nodeName='DIV']' is found in zone 'web' index 0" data-step-counter="5"
+																data-content="<img src='images/6.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>5</span>
+									<span> Check if 'xpath=//*[@text='I agree' and @nodeName='DIV']' is found in zone 'web' index 0</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Click 'xpath=//*[@text='I agree' and @nodeName='DIV']' in zone web, index: 0, click count: 1" data-step-counter="6"
+																data-content="<img src='images/7.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>6</span>
+									<span> Click 'xpath=//*[@text='I agree' and @nodeName='DIV']' in zone web, index: 0, click count: 1</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Run javascript on WebView" data-step-counter="7"
+																data-content="<img src='images/9.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>7</span>
+									<span> Run javascript on WebView</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="Hybrid Clear Cache" data-step-counter="8"
+																data-content="<img src='images/10.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>8</span>
+									<span> Hybrid Clear Cache</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+					
+													<li class='list-group-item' title="End Test" data-step-counter="9"
+																data-content="<img src='images/11.PNG' alt='Falied to retrieve image.' style='max-height:50px;display: block; margin-right: auto; margin-left: auto;'></img>"
+																>
+
+								<div class='txt'>
+									<span class='nmbr'>9</span>
+									<span> End Test</span>
+								</div>
+
+																	<div class='badge success'>
+										<span class='glyphicon glyphicon-ok'></span>
+									</div>
+								
+							</li>
+						
+												
+									</ul>
+				<div id="vertical-divider"></div>
+			</div>
+
+			<div class='right-panel'>
+
+				
+				<div class='results' style="display:block;" data-step-counter="0">
+					<h3 class="page-header">
+						Test Execution Summary
+					</h3>
+
+										<div class="alert alert-success" role="alert">
+						<span class='glyphicon glyphicon-ok'></span>Passed
+					</div>
+					
+   					
+					<div class='panel panel-default'>
+						<div class='panel-heading'>Execution Information</div>
+						<div class='panel-body'>
+							<table class='table'>
+								<tbody>
+									<tr>
+										<td>Time Zone</td>
+										<td>Israel Standard Time</td>
+									</tr>
+									<tr>
+										<td>Run Started</td>
+										<td>Fri, 15 Dec 2017 22:15:13</td>
+									</tr>
+									<tr>
+										<td>Total Time</td>
+										<td>75.0 Seconds</td>
+									</tr>
+									<tr>
+										<td>Project Path</td>
+										<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\trainingAssignment</td>
+									</tr>
+									<tr>
+										<td>User</td>
+										<td>karou</td>
+									</tr>
+		                            <tr>
+		                                <td>Machine Name</td>
+		                                <td>DESKTOP-R975OVJ</td>
+		                            </tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					
+					
+					<div class='panel panel-default'>
+						<div class='panel-heading'>Device Information <small>(Xiaomi Redmi 3S)</small></div>
+						<div class='panel-body'>
+							<table class='table'>
+								<tbody>
+									<tr>
+										<td>Name</td>
+										<td>Xiaomi Redmi 3S</td>
+									</tr>
+									<tr>
+										<td>OS</td>
+										<td>Android</td>
+									</tr>
+									<tr>
+										<td>Model</td>
+										<td>Redmi 3S</td>
+									</tr>
+									<tr>
+										<td>Manufacturer</td>
+										<td>Xiaomi</td>
+									</tr>
+									<tr>
+										<td>Version</td>
+										<td>6.0.1</td>
+									</tr>
+									<tr>
+										<td>Screen Size</td>
+										<td>720x1280</td>
+									</tr>
+									<tr>
+										<td>S/N</td>
+										<td>f229f2207d53</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+                                        
+
+                    <script type="text/javascript">
+
+                    $(document).ready(function(){
+
+                        var cpuLineData = {
+                            labels: [
+                                                            ],
+                            datasets: [
+                                {
+                                    label: "CPU usage over time",
+                                    fill: false,
+                                    lineTension: 0.1,
+                                    backgroundColor: "rgba(91,191,70,0.4)",
+                                    borderColor: "rgba(91,191,70,1)",
+                                    borderCapStyle: 'butt',
+                                    borderDash: [],
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "rgba(91,191,70,1)",
+                                    pointBackgroundColor: "#fff",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 5,
+                                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 2,
+                                    pointHitRadius: 10,
+                                    data: [
+                                                                            ],
+                                }
+                            ]
+                        };
+
+                        var cpuLineOptions = {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            animation: false,
+                            scales: {
+                                xAxes: [{
+                                    type: "time",
+                                    time: {
+                                        format: 'DD/MM/YYYY HH:mm:ss',
+                                        tooltipFormat: 'll HH:mm:ss'
+                                    },
+                                    display: true,
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Time'
+                                    }
+                                }, ],
+                                yAxes: [{
+                                    display: true,
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: '%'
+                                    }
+                                }]
+                            }
+                        };
+
+                        var memoryLineData = {
+                            labels: [
+                                                            ],
+                            datasets: [
+                                {
+                                    label: "Memory usage over time",
+                                    fill: false,
+                                    lineTension: 0.1,
+                                    backgroundColor: "rgba(247,70,74,0.4)",
+                                    borderColor: "rgba(247,70,74,1)",
+                                    borderCapStyle: 'butt',
+                                    borderDash: [],
+                                    borderDashOffset: 0.0,
+                                    borderJoinStyle: 'miter',
+                                    pointBorderColor: "rgba(247,70,74,1)",
+                                    pointBackgroundColor: "#fff",
+                                    pointBorderWidth: 1,
+                                    pointHoverRadius: 5,
+                                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                                    pointHoverBorderWidth: 2,
+                                    pointRadius: 2,
+                                    pointHitRadius: 10,
+                                    data: [
+                                                                            ],
+                                }
+                            ]
+                        };
+
+                        var memoryLineOptions = {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            animation: false,
+                            scales: {
+                                xAxes: [{
+                                    type: "time",
+                                    time: {
+                                        format: 'DD/MM/YYYY HH:mm:ss',
+                                        tooltipFormat: 'll HH:mm:ss'
+                                    },
+                                    display: true,
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Time'
+                                    }
+                                }, ],
+                                yAxes: [{
+                                    display: true,
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'MB'
+                                    }
+                                }]
+                            }
+                        };
+
+                        var cpuCtx = document.getElementById("monitoringCpuGraph").getContext("2d");;
+
+                        var cpuLineChart = Chart.Line(cpuCtx, {
+                            data: cpuLineData,
+                            options: cpuLineOptions
+                        });
+
+                        var memoryCtx = document.getElementById("monitoringMemoryGraph").getContext("2d");;
+
+                        var memoryLineChart = Chart.Line(memoryCtx, {
+                            data: memoryLineData,
+                            options: memoryLineOptions
+                        });
+
+
+                    });
+
+                    </script>
+
+
+					<!--
+										<div class='panel panel-default'>
+						<div class='panel-heading'>Transactions Information</div>
+						<div class='panel-body'>
+							<table class='table t'>
+								<thead>
+									<th>Step #</th>
+									<th>Name</th>
+									<th>Duration (seconds)</th>
+								</thead>
+								<tbody>
+																	</tbody>
+							</table>
+						</div>
+					</div>
+										-->
+				</div>
+
+				
+				
+					
+					<div class='results' data-step-counter="1">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Start test automationAssignment.TestingClass</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 1.283 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+														<div class="panel panel-default">
+																	<div class="panel-heading">Result Data</div>
+									<div class="panel-body">C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0</div>
+															</div>
+							
+							
+							
+								
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-1" onclick="toggleParamsData(1)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-1" style="display:none">
+                                                                            directory
+                                        :
+                                        C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S
+                                        <br />
+                                                                            reporterName
+                                        :
+                                        xml
+                                        <br />
+                                                                            testName
+                                        :
+                                        automationAssignment.TestingClass
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Start test automationAssignment.TestingClass</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:15:13</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>1</td>
+												</tr>
+																																			<tr>
+													<td>text</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>1.29</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="2">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Launch native activity / URL http://www.cnn.com</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 29.295 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+							
+							
+							
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/2.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/2.PNG' target="_blank" >
+												<img src='images/2.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-2" onclick="toggleParamsData(2)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-2" style="display:none">
+                                                                            Activity/URL
+                                        :
+                                        http://www.cnn.com
+                                        <br />
+                                                                            Instrument
+                                        :
+                                        true
+                                        <br />
+                                                                            Stop If Running
+                                        :
+                                        true
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Launch native activity / URL http://www.cnn.com</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\2.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:15:43</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>2</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>29.3</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="3">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Wait for 'xpath=//*[@id='menu']' in zone web, timeout: 1200000</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 7.383 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+														<div class="panel panel-default">
+																	<div class="panel-heading">Result Data</div>
+									<div class="panel-body">Found: true</div>
+															</div>
+							
+							
+							
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/3.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/3.PNG' target="_blank" >
+												<img src='images/3.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-3" onclick="toggleParamsData(3)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-3" style="display:none">
+                                                                            Timeout
+                                        :
+                                        1200000
+                                        <br />
+                                                                            Zone
+                                        :
+                                        web
+                                        <br />
+                                                                            Element
+                                        :
+                                        xpath=//*[@id='menu']
+                                        <br />
+                                                                            Index
+                                        :
+                                        0
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>bcolor</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>bcolor.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>click</td>
+													<td>670,210</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>color</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>color.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Wait for 'xpath=//*[@id='menu']' in zone web, timeout: 1200000</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>font.size</td>
+													<td>-1</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>height</td>
+													<td>100</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\3.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>position</td>
+													<td>620,160</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:15:50</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>3</td>
+												</tr>
+																																			<tr>
+													<td>text</td>
+													<td>Found: true</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>7.39</td>
+												</tr>
+																																			<tr>
+													<td>width</td>
+													<td>100</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="4">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Click 'xpath=//*[@id='menu']' in zone web, index: 0, click count: 1</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 5.503 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+							
+							
+							
+															<div class='two-screenshots'>
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/4.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/4.PNG' target="_blank" >
+												<img src='images/4.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Post Screenshot
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/5.PNG' target="_blank">
+												<img src='images/5.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-4" onclick="toggleParamsData(4)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-4" style="display:none">
+                                                                            Click Count
+                                        :
+                                        1
+                                        <br />
+                                                                            Zone
+                                        :
+                                        web
+                                        <br />
+                                                                            Element
+                                        :
+                                        xpath=//*[@id='menu']
+                                        <br />
+                                                                            Index
+                                        :
+                                        0
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>bcolor</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>bcolor.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>click</td>
+													<td>670,210</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>color</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>color.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Click 'xpath=//*[@id='menu']' in zone web, index: 0, click count: 1</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>font.size</td>
+													<td>-1</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>height</td>
+													<td>100</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>outFile2</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\5.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\4.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>position</td>
+													<td>620,160</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:15:56</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>4</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>5.51</td>
+												</tr>
+																																			<tr>
+													<td>width</td>
+													<td>100</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="5">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Check if 'xpath=//*[@text='I agree' and @nodeName='DIV']' is found in zone 'web' index 0</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 4.773 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+														<div class="panel panel-default">
+																	<div class="panel-heading">Result Data</div>
+									<div class="panel-body">Found: true</div>
+															</div>
+							
+							
+							
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/6.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/6.PNG' target="_blank" >
+												<img src='images/6.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-5" onclick="toggleParamsData(5)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-5" style="display:none">
+                                                                            Zone
+                                        :
+                                        web
+                                        <br />
+                                                                            Element
+                                        :
+                                        xpath=//*[@text='I agree' and @nodeName='DIV']
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>bcolor</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>bcolor.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>click</td>
+													<td>615,1231</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>color</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>color.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Check if 'xpath=//*[@text='I agree' and @nodeName='DIV']' is found in zone 'web' index 0</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>font.size</td>
+													<td>-1</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>height</td>
+													<td>62</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\6.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>position</td>
+													<td>550,1200</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:16:01</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>5</td>
+												</tr>
+																																			<tr>
+													<td>text</td>
+													<td>Found: true</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>4.78</td>
+												</tr>
+																																			<tr>
+													<td>width</td>
+													<td>130</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="6">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Click 'xpath=//*[@text='I agree' and @nodeName='DIV']' in zone web, index: 0, click count: 1</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 3.98 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+							
+							
+							
+															<div class='two-screenshots'>
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/7.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/7.PNG' target="_blank" >
+												<img src='images/7.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Post Screenshot
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/8.PNG' target="_blank">
+												<img src='images/8.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-6" onclick="toggleParamsData(6)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-6" style="display:none">
+                                                                            Click Count
+                                        :
+                                        1
+                                        <br />
+                                                                            Zone
+                                        :
+                                        web
+                                        <br />
+                                                                            Element
+                                        :
+                                        xpath=//*[@text='I agree' and @nodeName='DIV']
+                                        <br />
+                                                                            Index
+                                        :
+                                        0
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>bcolor</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>bcolor.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>click</td>
+													<td>615,1231</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>color</td>
+													<td>-2147483648</td>
+												</tr>
+																																			<tr>
+													<td>color.name</td>
+													<td>UNKNOWN</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Click 'xpath=//*[@text='I agree' and @nodeName='DIV']' in zone web, index: 0, click count: 1</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>font.size</td>
+													<td>-1</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>height</td>
+													<td>62</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>outFile2</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\8.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\7.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>position</td>
+													<td>550,1200</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:16:05</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>6</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>3.98</td>
+												</tr>
+																																			<tr>
+													<td>width</td>
+													<td>130</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="7">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Run javascript on WebView</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 2.672 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+							
+							
+							
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/9.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/9.PNG' target="_blank" >
+												<img src='images/9.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-7" onclick="toggleParamsData(7)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-7" style="display:none">
+                                                                            Script
+                                        :
+                                        history.go(-1);
+                                        <br />
+                                                                            WebViewLocator
+                                        :
+                                        
+                                        <br />
+                                                                            Index
+                                        :
+                                        0
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Run javascript on WebView</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>jslog</td>
+													<td></td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\9.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:16:08</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>7</td>
+												</tr>
+																																			<tr>
+													<td>text</td>
+													<td></td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>2.68</td>
+												</tr>
+																																			<tr>
+													<td>type</td>
+													<td></td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="8">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">Hybrid Clear Cache</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 19.896 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+							
+							
+							
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/10.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/10.PNG' target="_blank" >
+												<img src='images/10.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-8" onclick="toggleParamsData(8)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-8" style="display:none">
+                                                                            ClearCookies
+                                        :
+                                        true
+                                        <br />
+                                                                            ClearCache
+                                        :
+                                        true
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>Hybrid Clear Cache</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\10.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:16:28</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>8</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>19.9</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+					
+					<div class='results' data-step-counter="9">
+						<ul class='nav nav-tabs sub-tabs'>
+							<li class='selected'>Result Details</li>
+
+														<li>Debug Properties</li>
+													</ul>
+						<div class='sub-results' style="display: none;">
+
+							<h3 class="page-header">End Test</h3>
+
+														<div class='panel panel-success'>
+								<div class='panel-heading'>
+									<span class='glyphicon glyphicon-ok'></span>Passed
+								</div>
+							
+
+
+								<div class='panel-body'>
+									<div>Total Time: 0.533 Seconds</div>
+																</div>
+							</div>
+
+							<script type="text/javascript">
+							function toggleData(step) {
+                                var $btn = document.getElementById("expand-data-btn-"+step);
+                                var $expanded = document.getElementById("expand-data-"+step);
+                                var $collapsed = document.getElementById("collapse-data-"+step);
+                                var btn_class = $btn.className.split(" ");
+                                if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                    btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                    $collapsed.style.display="none";
+                                    $expanded.style.display="block";
+                                }
+                                else {
+                                    btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                    $collapsed.style.display="block";
+                                    $expanded.style.display="none";
+                                }
+                                $btn.className = btn_class.join(" ");
+                            }
+                            </script>
+							
+							
+							
+								
+																<div class='panel panel-default screenshot'>
+									<div class='panel-heading'>
+										Result Screenshot
+																				<a class="btn btn-default btn-xs pull-right dump-link" href="images/11.PNG" target="_blank">open</a>
+																			</div>
+									<div class='panel-body'>
+										<div class='img'>
+											<a href='images/11.PNG' target="_blank" >
+												<img src='images/11.PNG'/>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								
+												</div>
+
+
+                        <script type="text/javascript">
+
+                        function toggleParamsData(step) {
+
+                            var $btn = document.getElementById("expand-data-params-btn-" + step);
+                            var $collapsed = document.getElementById("collapse-data-params-" + step);
+                            var btn_class = $btn.className.split(" ");
+
+                            if (btn_class.indexOf("glyphicon-plus") > -1) {
+                                btn_class[btn_class.indexOf("glyphicon-plus")] = "glyphicon-minus";
+                                $collapsed.style.display = "block";
+                            } else {
+                                btn_class[btn_class.indexOf("glyphicon-minus")] = "glyphicon-plus";
+                                $collapsed.style.display = "none";
+                            }
+
+                            $btn.className = btn_class.join(" ");
+                        }
+
+                        </script>
+
+												<div class='sub-results'>
+
+						                        <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <button class="btn btn-default glyphicon glyphicon-plus btn-xs pull-left" style="outline:none" id="expand-data-params-btn-9" onclick="toggleParamsData(9)"></button>
+                                        Command Parameters
+                                </div>
+                                <div class="panel-body" id="collapse-data-params-9" style="display:none">
+                                                                            releaseClient
+                                        :
+                                        false
+                                        <br />
+                                                                    </div>
+                        </div>
+                        
+							<div class="panel panel-default">
+								<div class="panel-heading">Debug Properties</div>
+								<div class="panel-body">
+									<table class='table'>
+																				<tbody>
+																							<tr>
+													<td>Application Bounds</td>
+													<td>0,0,1280,720</td>
+												</tr>
+																																			<tr>
+													<td>Client ID</td>
+													<td>clientID:Java:version=11.3:e6ad52b5-2df9-4392-833d-e03a46df114c</td>
+												</tr>
+																																			<tr>
+													<td>Console Output</td>
+													<td>End Test</td>
+												</tr>
+																																			<tr>
+													<td>Device Name</td>
+													<td>adb:Xiaomi Redmi 3S</td>
+												</tr>
+																																			<tr>
+													<td>Found</td>
+													<td>false</td>
+												</tr>
+																																			<tr>
+													<td>Image Height</td>
+													<td>711</td>
+												</tr>
+																																			<tr>
+													<td>Image Width</td>
+													<td>400</td>
+												</tr>
+																																			<tr>
+													<td>Output File</td>
+													<td>C:\Users\karou\Dropbox\EclipseWorkSpace\automationAssignment\testReports\RUN_1513368912488\Xiaomi Redmi 3S\test0\images\11.PNG</td>
+												</tr>
+																																			<tr>
+													<td>Port</td>
+													<td>N/A</td>
+												</tr>
+																																			<tr>
+													<td>product.version</td>
+													<td>11.3.82</td>
+												</tr>
+																																			<tr>
+													<td>Report</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Scenario Index</td>
+													<td>0</td>
+												</tr>
+																																			<tr>
+													<td>Screen Height</td>
+													<td>1280</td>
+												</tr>
+																																			<tr>
+													<td>Screen Width</td>
+													<td>720</td>
+												</tr>
+																																			<tr>
+													<td>Start Time</td>
+													<td>22:16:29</td>
+												</tr>
+																																			<tr>
+													<td>Status</td>
+													<td>true</td>
+												</tr>
+																																			<tr>
+													<td>Step</td>
+													<td>9</td>
+												</tr>
+																																			<tr>
+													<td>Time (in sec)</td>
+													<td>0.54</td>
+												</tr>
+																																	</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+
+					
+				
+			</div>
+		</div>
+	</body>
+</html>
