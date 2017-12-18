@@ -5,7 +5,7 @@
 <!-- 	<test thread-count="5" name="CSVloginAndroid"> -->
 <!-- 		<parameter name="timeInMillis" value="60000" /> -->
 <!-- 		<parameter name="timerON" value="false" /> -->
-<!-- 		<parameter name="threadsCount" value="2" /> -->
+<!-- 		<parameter name="threadsCount" value="5" /> -->
 <!-- 		<classes> -->
 <!-- 			<class name="automationAssignment.CSVloginAndroid" /> -->
 <!-- 		</classes> -->
@@ -26,6 +26,15 @@
 		<parameter name="threadsCount" value="3" />
 		<classes>
 			<class name="automationAssignment.TestingClass" />
+		</classes>
+	</test>
+	
+	<test thread-count="5" name="testCapture">
+		<parameter name="timeInMillis" value="60000" />
+		<parameter name="timerON" value="false" />
+		<parameter name="threadsCount" value="3" />
+		<classes>
+			<class name="automationAssignment.testCapture" />
 		</classes>
 	</test>
 

@@ -24,7 +24,7 @@ public class BaseTest
 	public long startTime;
 	public long endTime;
 	private int repetitionsCount = 1;
-	String testingReportsDir = "C:\\Users\\karou\\Desktop\\testsReport";
+	//String testingReportsDir = "C:\\Users\\karou\\Desktop\\testsReport";
 	ITestListener testListener;
 
 	public void readCSV(ArrayList<String> usernames, ArrayList<String> passwords) throws IOException
@@ -105,6 +105,7 @@ public class BaseTest
 	{
 		while (repetitionsCount < 4)
 		{
+			
 			this.startTime = System.currentTimeMillis();
 			this.endTime = startTime + timeInMillis;
 

@@ -1,0 +1,55 @@
+.right-panel {
+	width: 65% !important;
+}
+
+img {
+	display: none;
+	height: 0px;
+	width: 0px;	
+}
+
+
+span.icon {
+	display: none;
+	height: 0px;
+	width: 0px;	
+}
+
+span.failed {
+	display: none;
+	height: 0px;
+	width: 0px;	
+}
+
+span.ok {
+	display: none;
+	height: 0px;
+	width: 0px;	
+}
+
+#report-bar-ul li span.right-arrow {
+	display: none;
+	height: 0px;
+	width: 0px;	
+}
+
+#report-bar-ul li {
+	height: 20px;
+	padding: 5px;
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 0px solid #ccc;
+}
+
+.left-panel {
+	float: left;
+	width: 28%;
+	height: 100%;
+}
+
+.right-panel {
+	float: left;
+	width: 65%;
+	margin-left: 5%;
+	height: 100%;
+}

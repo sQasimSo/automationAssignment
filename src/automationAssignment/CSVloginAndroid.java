@@ -25,8 +25,6 @@ public class CSVloginAndroid extends BaseTest
 		
 		loginTestAndroid(usernames, passwords);
 		
-		this.status = "succeeded";
-		
 		return status;
 	}
 
@@ -35,8 +33,11 @@ public class CSVloginAndroid extends BaseTest
 	{
 		String str0 = client.waitForDevice("@os='android'", 300000);
 		reportsPath = System.getProperty("user.dir") + "\\testReports\\RUN_" +System.currentTimeMillis() + "\\" + str0.split(":")[1];
+		client.startLoggingDevice(reportsPath);
 		System.out.println(reportsPath);
-		
+		client.openDevice();
+		client.startMonitor("com.experitest.ExperiBank");
+
 		try
 		{
 			new File(reportsPath).mkdir();
@@ -52,8 +53,14 @@ public class CSVloginAndroid extends BaseTest
 		{
 			// If statement
 		}
-		client.launch("com.experitest.ExperiBank/.LoginActivity", true, false);
+		
+		System.out.println(this.status);
+		
+		client.launch("com.experitest.ExperiBank/.LoginActivity", true, true);
 
+
+		System.out.println(this.status);
+		
 		for (int i = 0; i < usernames.size(); i++)
 		{
 			client.elementSendText("CSVlogin", "Username", 0, usernames.get(i));
@@ -67,9 +74,22 @@ public class CSVloginAndroid extends BaseTest
 			{
 				if (client.isElementFound("CSVlogin", "Logout", 0))
 				{
-					// If statement
+					this.status = "succeeded";
+					String str1 = client.hybridGetHtml("id=balanceWebView", 0);
+					
 				}
 			}
 		}
+		
+		client.applicationClearData("com.experitest.ExperiBank/.LoginActivity");
+		
+		if (client.uninstall("cloud:com.experitest.ExperiBank/.LoginActivity"))
+		{
+			// If statement
+		}
+		
+		client.sleep(10000);
+		String str4 = client.getMonitorsData("");
+		client.stopLoggingDevice();
 	}
 }

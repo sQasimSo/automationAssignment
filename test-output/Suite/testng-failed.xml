@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="10" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <parameter name="threadsCount" value="5"/>
+  <parameter name="threadsCount" value="3"/>
   <parameter name="timeInMillis" value="60000"/>
   <parameter name="timerON" value="false"/>
-  <test name="CNN_a1(failed)" parallel="tests">
-    <parameter name="threadsCount" value="5"/>
+  <test name="TestingClass(failed)" parallel="tests">
+    <parameter name="threadsCount" value="3"/>
     <parameter name="timeInMillis" value="60000"/>
     <parameter name="timerON" value="false"/>
     <classes>
       <class name="automationAssignment.TestingClass">
         <methods>
           <include name="setUp"/>
+          <include name="test" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- automationAssignment.TestingClass -->
-      <class name="automationAssignment.CNNaIOS">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- automationAssignment.CNNaIOS -->
-      <class name="automationAssignment.CNNa">
-        <methods>
-          <include name="setUp"/>
-          <include name="setUp"/>
-          <include name="test" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- automationAssignment.CNNa -->
     </classes>
-  </test> <!-- CNN_a1(failed) -->
+  </test> <!-- TestingClass(failed) -->
 </suite> <!-- Failed suite [Suite] -->

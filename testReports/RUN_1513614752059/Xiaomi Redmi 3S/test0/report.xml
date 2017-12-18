@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><test_report>
+<info>
+<test_info>
+<test_status>Failed</test_status>
+<time_zone>Israel Standard Time</time_zone>
+<run_started>Mon, 18 Dec 2017 18:32:32</run_started>
+<total_time>141.0</total_time>
+<project>C:\Users\qasim.sobeh\git\automationAssignment\trainingAssignment</project>
+<user>qasim.sobeh</user>
+<machine_name>qasimsobeh-lt</machine_name>
+</test_info>
+<device_info>
+<device_name>Xiaomi Redmi 3S</device_name>
+<manufacture>Xiaomi</manufacture>
+<model>Redmi 3S</model>
+<os>Android</os>
+<serial_number>f229f2207d53</serial_number>
+<version>6.0.1</version>
+<versionMajor>6.x</versionMajor>
+<screen_size>720x1280</screen_size>
+</device_info>
+</info>
+<reports>
+<report>
+<text>C:\Users\qasim.sobeh\git\automationAssignment\testReports\RUN_1513614752059\Xiaomi Redmi 3S\test0</text>
+<line>Start test automationAssignment.CSVloginAndroid</line>
+<status>true</status>
+</report>
+<report>
+<imageFile>2.PNG</imageFile>
+<line>Install cloud:com.experitest.ExperiBank/.LoginActivity</line>
+<status>true</status>
+</report>
+<report>
+<line>Launch native activity / URL com.experitest.ExperiBank/.LoginActivity</line>
+<status>false</status>
+</report>
+<report>
+<imageFile>3.PNG</imageFile>
+<line>End Test</line>
+<status>true</status>
+</report>
+</reports>
+</test_report>

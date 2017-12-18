@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<title>Summary Report</title>
+	
+			<link rel="shortcut icon" href="resources/images/favicon_auto.ico">
+			
+		<script type="text/javascript" src='resources/jquery-2.1.0.min.js'></script>
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src='resources/jquery-1.11.1.min.js'></script>
+		<![endif]-->
+		<script type="text/javascript" src='resources/js/chart.min.js'></script>
+		<script type='text/javascript' src='resources/summary.js'></script>
+		<script type="text/javascript" src="resources/js/bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+
+		<style type="text/css">
+
+		* {
+			font-family: 'Segoe UI',Tahoma,Helvetica,Sans-Serif;
+		}
+
+		#filterField{
+			float: right;
+			border-radius: 5px;
+			padding: 6px;
+			border: 1px solid #BDBDBD;
+		}
+
+		.navbar h3{
+			float: left;
+		}
+
+		.navbar .logo{
+			float: right;
+			background-image: url(resources/images/logo.png);
+			width: 100px;
+			height: 30px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin: 15px auto;
+		}
+
+		.navbar .logomf{
+			float: right;
+			background-image: url(resources/images/mf_logo.jpg);
+			width: 100px;
+			height: 30px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin: 15px auto;
+		}
+
+		td .glyphicon{
+			padding-right: 5px;
+		}
+
+
+		.highlighted {
+			background-color: rgba(255, 230, 0, 0.5);
+			margin: 0px;
+			border-radius: 3px;
+		}
+
+		#noresultrow{
+			height: 50px;
+			display: table-row;
+		}
+
+		#main-report{
+			width: 100%;
+			height: 100%; 
+			display: none;
+			position: fixed;
+		}
+
+		#report-iframe{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+
+		/* iFrame overlay buttons */
+		.floating{
+			position: fixed;
+			z-index: 1;
+			background-color: #f3f3f3;
+			text-align: center;
+			padding: 15px 0px;
+			cursor: pointer;
+			width: 140px;
+			white-space: nowrap;
+			font-size: 11px;
+			font-weight: bold;
+			right: -100px;
+			transition: right 0.2s;
+		}
+		
+		.floating span {
+  			float: left;
+			width: 40px;
+			text-align: center;
+		}
+
+		.floating:hover{
+			right: 0px;
+		}
+
+		#returntomenu {
+			bottom: 114px;
+		}
+
+		#nextbutton{
+			bottom: 62px;
+		}
+
+		#backbutton{
+			bottom: 10px;
+		}
+
+		#search-container{
+			width: 100%;
+			height: 50px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.panel .table{
+			margin: 0;
+		}
+
+		.table tbody tr{
+			cursor: pointer;
+		}
+
+		.table tbody tr:hover{
+			background-color: #f3f3f3;
+		}
+
+		#bar-chart-container{
+			width: 50%;
+			float: left;
+		}
+
+		#pie-chart-container{
+			width: 50%;
+			float: right;
+		}
+
+		#noscript{
+			position: fixed;
+			z-index: 10;
+			top: 10px;
+			right: 30px;
+		}
+
+		</style>
+
+	</head>
+	<body>
+		
+		<noscript>
+			<div id='noscript'>
+					Javascript was not detected. Please enable Javascript in this page to access the data in this report.
+			</div>
+		</noscript>
+
+		<div id='main-report'>
+			<div id='returntomenu' class='floating'>
+				<span class='glyphicon glyphicon-menu-hamburger'></span>
+				<span>Main Menu</span>
+			</div>
+			<div id='nextbutton' class='floating'>
+				<span class='glyphicon glyphicon-chevron-right'></span>
+				<span>Next Report</span>
+			</div>
+			<div id='backbutton' class='floating'>
+				<span class='glyphicon glyphicon-chevron-left'></span>
+				<span>Previous Report</span>
+			</div>
+			<iframe id="report-iframe" src="" frameborder="0" seamless='true'></iframe>
+		</div>
+
+		<div id='main-menu'>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<h3>Summary Report</h3>
+									<a href='http://www.experitest.com' class='logo' target='_BLANK'></a>
+								</div>
+			</nav>
+			
+			<div class='container-fluid'>
+				
+				<div class='panel panel-default'>
+					<div class='panel-body'>
+						<div id='bar-chart-container'>
+							<h4 class="text-center">Test Result By Time Period</h4>
+							<canvas id="barChart"></canvas>
+						</div>
+						<div id='pie-chart-container'>
+							<h4 class="text-center">Total Test Result</h4>
+							<canvas id="pieChart"></canvas>
+						</div>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+
+				$(document).ready(function(){
+
+					var barData = {
+						labels: [ "Last 24 Hours", "Last Week", "Last Month", "Last 3 Month", "Last Year" ],
+						datasets: [
+							{
+								label: "Passed",
+								fillColor: "#5BBF46",
+								strokeColor: "transparent",
+								highlightFill: "#6BD255",
+								highlightStroke: "transparent",
+								data: [	
+										0,
+										0,
+										0,
+										0,
+										0
+									]
+							},
+							{
+								label: "Failed",
+								fillColor: "#F7464A",
+								strokeColor: "transparent",
+								highlightFill: "#FF5A5E",
+								highlightStroke: "transparent",
+								data: [	
+										1,
+										1,
+										1,
+										1,
+										1
+									]
+							}
+						]
+					};
+
+					var barOptions = {
+						responsive: true,
+						maintainAspectRatio: true,
+						animation: false
+					};
+
+					var barCtx = document.getElementById("barChart").getContext("2d");;
+					
+					var myBarChart = new Chart(barCtx).Bar(barData, barOptions);
+					//var barChartLegend = myBarChart.generateLegend();
+					//$('#bar-chart-container').html(barChartLegend);
+					
+					var pieData = [
+						{
+							value: 1,
+							color:"#F7464A",
+							highlight: "#FF5A5E",
+							label: "Failed"
+						},
+						{
+							value: 0,
+							color: "#5BBF46",
+							highlight: "#6BD255",
+							label: "Passed"
+						}
+					];
+
+					var pieOptions = {
+						responsive: true,
+						maintainAspectRatio: true,
+						animation: false
+					};
+
+					var pieCtx = document.getElementById("pieChart").getContext("2d");;
+					
+					var myPieChart = new Chart(pieCtx).Pie(pieData, pieOptions);
+					//var pieChartLegend = myPieChart.generateLegend();
+					//$('#pie-chart-container').html(pieChartLegend);
+
+					// Enable bootstrap tooltip
+                    $('[data-toggle="tooltip"]').tooltip()
+				});
+
+				</script>
+				
+				<p>
+					<a href='C:\Users\qasim.sobeh\seetest-reports\transactions_summary.csv'>transactions_summary.csv</a>
+					<br /><br />
+				</p>
+
+				<div class='panel panel-default'>
+					<div class='panel-heading'>Test Reports</div>
+					<div class='panel-body'>
+						
+						<div id='search-container'>
+							<input id="filterField" type="text" placeholder="Search" autofocus/>
+						</div>
+						
+						<table class='table'>
+							<thead>
+								<th class='text-center'>#</th>
+								<th>Name</th>
+								<th>Status</th>
+								<th>Run Started</th>
+								<th>Duration</th>
+								<th>Failed Step</th>
+								<th>Error Message</th>
+							</thead>
+														<tbody>
+																	<tr>
+										<td style='text-align: center;'><span>1<span></td>
+										<td><span href='test0' file='index.html'>automationAssignment.CNNa</span></td>
+																				<td class='text-danger'>
+											<span class='glyphicon glyphicon-remove'></span>
+											<span>Failed</span>
+										</td>
+																				<td><span>Mon, 18 Dec 2017 18:07:14</span></td>
+										<td><span>169.0 Seconds</span></td>
+										<td><span>9:Swipe to find xpath=//*[@text='World']</span></td>
+										<td><span data-toggle="tooltip" title="Unknown error message">Unknown error message</span></td>
+									</tr>
+																									
+								<tr id="noresultrow" style="display: none;">
+									<td colspan="5">
+										<center>No test results were found for the search <b id="noresultrow-searchtext"></b></center>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

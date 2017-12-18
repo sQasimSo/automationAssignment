@@ -35,7 +35,9 @@ public class CSVloginIOS extends BaseTest
 		
 		String str0 = client.waitForDevice("@os='ios'", 300000);
 		reportsPath = System.getProperty("user.dir") + "\\testReports\\RUN_" +System.currentTimeMillis() + "\\" + str0.split(":")[1];
+		client.startLoggingDevice(reportsPath);
 		System.out.println(reportsPath);
+		client.openDevice();
 		
 		try
 		{
@@ -69,9 +71,11 @@ public class CSVloginIOS extends BaseTest
 			{
 				if (client.isElementFound("CSVloginIOS", "Logout", 0))
 				{
-					// If statement
+					String str1 = client.hybridGetHtml("id=balanceWebView", 0);
 				}
 			}
 		}
+		
+		client.stopLoggingDevice();
 	}
 }

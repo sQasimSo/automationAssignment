@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>CNN_a_IOS</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 15 22:15:08 IST 2017</td>
+<td>Started on:</td><td>Mon Dec 18 18:04:31 IST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>510 seconds (510168 ms)</td>
+<tr><td>Total time:</td><td>303 seconds (303951 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,9 +76,44 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='automationAssignment.CNNaIOS.test()'><b>test</b><br>Test class: automationAssignment.CNNaIOS<br>Parameters: 60000, false, 5</td>
-<td></td>
-<td>505</td>
-<td>automationAssignment.CNNaIOS@5a1c0542</td></tr>
+<td><div><pre>com.experitest.client.InternalException: Timeout wait for device
+	at com.experitest.client.JavaClientInternals.waitForDevice(JavaClientInternals.java:395)
+	at com.experitest.client.Client.waitForDevice(Client.java:234)
+	at automationAssignment.CNNaIOS.testAux(CNNaIOS.java:16)
+	at automationAssignment.BaseTest.test(BaseTest.java:119)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1861584123", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1861584123'><pre>com.experitest.client.InternalException: Timeout wait for device
+	at com.experitest.client.JavaClientInternals.waitForDevice(JavaClientInternals.java:395)
+	at com.experitest.client.Client.waitForDevice(Client.java:234)
+	at automationAssignment.CNNaIOS.testAux(CNNaIOS.java:16)
+	at automationAssignment.BaseTest.test(BaseTest.java:119)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:400)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>301</td>
+<td>automationAssignment.CNNaIOS@5f71c76a</td></tr>
 </table><p>
 </body>
 </html>

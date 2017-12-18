@@ -1,0 +1,32 @@
+{
+  "name": "experitest_client",
+  "description": "Experitest Client For Javascript/Node.js",
+  "keywords": [
+    "experitest"
+  ],
+  "version": "9.3.1",
+  "preferGlobal": false,
+  "author": {
+    "name": "Yoram Cohen",
+    "email": "support@experitest.com",
+    "url": "https://experitest.com"
+  },
+  "directories": {
+    "lib": "./"
+  },
+  "main": "./Client.js",
+  "dependencies": {
+    "xmlrpc": "1.3.1",
+    "crypto": "0.0.3",
+    "deasync": "0.1.9"
+  },
+  "engines": {
+    "node": ">=0.8",
+    "npm": ">=1.0.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "experitest_client@9.3.1",
+  "scripts": {},
+  "_shasum": "ec9866af7b9b5ef2a08de8bbe7f5b98828623773",
+  "_from": "experitest_client@*"
+}

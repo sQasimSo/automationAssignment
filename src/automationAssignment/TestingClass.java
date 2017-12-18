@@ -13,7 +13,9 @@ public class TestingClass extends BaseTest
 	{
 		String str0 = client.waitForDevice("@os='android'", 300000);
 		reportsPath = System.getProperty("user.dir") + "\\testReports\\RUN_" +System.currentTimeMillis() + "\\" + str0.split(":")[1];
+		client.startLoggingDevice(reportsPath);
 		System.out.println(reportsPath);
+		client.openDevice();
 		
 		try
 		{
@@ -39,7 +41,17 @@ public class TestingClass extends BaseTest
 		
 		String str2 = client.hybridRunJavascript("", 0, "history.go(-1);");
 		client.hybridClearCache(true, true);
+		
+		System.out.println(client.getCounter("memory"));
+		System.out.println(client.getCounter("cpu"));
+		System.out.println(client.getCounter("battery"));
+
+		client.report("This is a custom message inserted into the test report. It will be marked there as \"succeeded\"", true);
+		
 		this.status = "succeeded";
+		
+		
+		client.stopLoggingDevice();
 		
 		return this.status;
 	}
